@@ -1,0 +1,20 @@
+{
+    "name": "bytebank",
+    "version": "1.0.0",
+    "description": "Projeto do bytebank, estudo de POO pela Alura",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/amaralltx/BityBank-Estudo-de-POO-em-Javascript.git"
+    },
+    "author": "Lucas Amaral",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/amaralltx/BityBank-Estudo-de-POO-em-Javascript/issues"
+    },
+    "homepage": "https://github.com/amaralltx/BityBank-Estudo-de-POO-em-Javascript#readme",
+    "type": "module"
+}
