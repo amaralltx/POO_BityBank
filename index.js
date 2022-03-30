@@ -2,25 +2,23 @@ import { Cliente } from "./Cliente.js";
 import { ContaCorrente } from "./ContaCorrente.js";
 import { ContaPoupanca} from "./ContaPoupanca.js";
 
-const tiaum = new Cliente(
+const cliente1 = new Cliente(
     'Lucas Figueiredo Dascalakis Martins ',
     '079.248.006.08',
 );
 
-const lucas = new Cliente(
+const cliente2 = new Cliente(
     'Lucas Amaral',
     '029.448.026.23',
 );
 
-const correnteDoTiaum = new ContaCorrente(1001, 1000, tiaum);
+const correnteDoCliente1 = new ContaCorrente(1001, 1000, cliente1);
 
-const correnteDoLucas = new ContaCorrente(1002, 0, lucas);
+const poupancaDoCliente2 = new ContaPoupanca(1002,0 ,cliente2);
 
 
-correnteDoTiaum.depositar(1000);
-correnteDoTiaum.sacar(1000);
-correnteDoTiaum.transferir(100, lucas);
+cliente2.clienteInfo();
 
-lucas.clienteInfo();
+cliente1.clienteInfo();
 
-tiaum.clienteInfo();
+cliente2._conta.simularRendimento(12, 10, 1000);

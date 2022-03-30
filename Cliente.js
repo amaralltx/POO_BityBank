@@ -7,18 +7,20 @@ export class Cliente {
         this._nome = nome;
         this._cpf = cpf;
 
-        if(!(conta instanceof ContaCorrente) && !(conta instanceof ContaPoupanca)){
+        if(!(conta instanceof ContaCorrente) || !(conta instanceof ContaPoupanca)){
             console.log("Cliente registrado sem nenhuma conta");
+            this._conta = undefined;
         } else {
             this._conta = conta;
-            this._conta.cliente = this;
+            this._conta._cliente = this;
         }
 
     }
 
     clienteInfo() {
+        console.log(this);
         console.log(
-            `Nome: ${this._nome}\nCPF: ${this._cpf}\nAgencia: ${this.conta.agencia}\nSaldo: ${this.conta.saldo}`
+            `Nome: ${this._nome}\nCPF: ${this._cpf}\nAgencia: ${this._conta._agencia}\nSaldo: ${this._conta._saldo}`
         );
     }
 
@@ -33,13 +35,8 @@ export class Cliente {
     get conta(){
         return this._conta;
     }
-    /**
-     * @param {ContaCorrente | ContaPoupanca} conta
-     */
+    
     set conta(conta){
-
-        (conta instanceof ContaCorrente || conta instanceof ContaPoupanca) ? this.conta = conta : console.log("Erro, insira uma conta válida");
+        this._conta = conta;
     }
-
-
 }
