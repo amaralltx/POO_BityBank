@@ -1,12 +1,19 @@
-import { Cliente } from "./Cliente.js";
-
 export class Conta {
-
+    /**
+     * Abstract Class Conta.
+     *
+     * @class Conta
+     */
     constructor(agencia, saldo, cliente) {
+        if (this.constructor == Conta) {
+            throw new Error(
+                "Conta é uma classe abstrata e não deve ser instânciada diretamente"
+            );
+        }
         this._agencia = agencia;
         this._saldo = saldo;
         this._cliente = cliente;
-        this._cliente._conta = this;
+        this._cliente.adicionaConta(this);
     }
 
     transferir(valor, destinatario) {
@@ -60,9 +67,9 @@ export class Conta {
 
     get cliente() {
         return this._cliente;
-    } 
+    }
 
-    get agencia(){
+    get agencia() {
         return this._agencia;
     }
 }
