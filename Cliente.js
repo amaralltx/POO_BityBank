@@ -4,6 +4,7 @@ import { ContaPoupanca } from "./Contas/ContaPoupanca.js";
 export class Cliente {
     #cpf;
     #nome;
+    #senha
 
     constructor(nome, cpf, conta) {
         this.#nome = nome;
@@ -30,6 +31,14 @@ export class Cliente {
             );
             i++;
         });
+    }
+
+    cadastrarSenha(senha){
+        senha.length >= 8 ? this.#senha = senha : console.log("Erro, a senha deve conter mais que 8 caractéres");
+    }
+
+    autenticar(senha){
+        return this.#senha == senha ? 1 : 0;
     }
 
     get nome() {

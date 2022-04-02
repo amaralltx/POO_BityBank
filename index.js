@@ -1,12 +1,14 @@
 import { Cliente } from "./Cliente.js";
 import { ContaCorrente } from "./Contas/ContaCorrente.js";
 import { ContaPoupanca } from "./Contas/ContaPoupanca.js";
+import { Diretor } from "./Funcionarios/Diretor.js";
 import { Gerente } from "./Funcionarios/Gerente.js";
+import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
 
-// const cliente1 = new Cliente(
-//     "Lucas Figueiredo Dascalakis Martins ",
-//     "079.248.006.08"
-// );
+const cliente1 = new Cliente(
+    "Lucas Figueiredo Dascalakis Martins ",
+    "079.248.006.08"
+);
 
 // const cliente2 = new Cliente("Lucas Amaral", "029.448.026.23");
 
@@ -16,6 +18,12 @@ import { Gerente } from "./Funcionarios/Gerente.js";
 
 // cliente1.clienteInfo();
 
-const funcionario1 = new Gerente("Rafaela Amaral", "079.048.357.13", 6000);
+cliente1.cadastrarSenha("12345678");
 
-console.log(funcionario1);
+const funcionario1 = new Diretor("Rafaela Amaral", '07904835713', 6000);
+
+const funcionario2 = new Gerente("Rafael Teixeira" , '00926515976' , 3500);
+
+const a = new Array();
+SistemaAutenticacao.login(cliente1, "12345678");
+
